@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  frontend:
+    build: frontend/.
+    restart: on-failure
+    ports:
+      - "9991:3000"
+    environment:
+      NEXT_PUBLIC_DATABASE_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "9993:27017"
+    environment:
+      environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 9992:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: root
+      ME_CONFIG_BASICAUTH_PASSWORD: ${DB_PASSWORD}
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${DB_PASSWORD}
+      ME_CONFIG_MONGODB_URL: mongodb://root:${DB_PASSWORD}@mongo:27017/

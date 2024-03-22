@@ -1,3 +1,9 @@
+import { Flex, Title } from '@mantine/core';
+
 export default function HomePage() {
-  return <div>Home page</div>;
+	return (
+		<Flex>
+			<Title order={1}>Hello, World!</Title>
+		</Flex>
+	);
 }
