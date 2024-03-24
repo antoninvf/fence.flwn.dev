@@ -1,0 +1,12 @@
+.header {
+	padding-top: var(--mantine-spacing-sm);
+	background-color: light-dark(
+		var(--mantine-color-gray-0),
+		var(--mantine-color-dark-6)
+	);
+	border-bottom: rem(1px) solid
+		light-dark(var(--mantine-color-gray-2), transparent);
+	background-image: url('/images/fence.png');
+	background-size: contain;
+	background-position-x: center;
+}
