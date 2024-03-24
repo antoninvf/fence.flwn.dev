@@ -7,7 +7,7 @@ services:
     ports:
       - "9991:3000"
     environment:
-      NEXT_PUBLIC_DATABASE_PASSWORD: ${DB_PASSWORD}
+      MONGODB_URI: mongodb://root:${DB_PASSWORD}@localhost:27017/fence
     depends_on:
       - mongo
   mongo:
