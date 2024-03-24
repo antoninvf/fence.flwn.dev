@@ -6,8 +6,6 @@ services:
     restart: on-failure
     ports:
       - "9991:3000"
-    environment:
-      NEXT_PUBLIC_DATABASE_PASSWORD: ${DB_PASSWORD}
     depends_on:
       - mongo
   mongo:
@@ -15,6 +13,3 @@ services:
     restart: always
     ports:
       - "9993:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
