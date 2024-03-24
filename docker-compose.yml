@@ -8,6 +8,9 @@ services:
       - "9991:3000"
     depends_on:
       - mongo
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/fence
+      SECRET_KEY: ${SECRET_KEY}
   mongo:
     image: mongo:latest
     restart: always
