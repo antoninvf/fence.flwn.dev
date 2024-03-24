@@ -28,8 +28,37 @@ export default function About() {
 				</Text>
 
 				<Text mt={'sm'}>
+					This whole website is made using{' '}
+					<a href="https://mantine.dev" target="_blank">
+						Mantine
+					</a>
+					,{' '}
+					<a href="https://nextjs.org" target="_blank">
+						Next.js
+					</a>{' '}
+					and{' '}
+					<a href="https://mongodb.com" target="_blank">
+						MongoDB
+					</a>{' '}
+					and is hosted on my homeserver called ZEPHYR.
+					<br />
+					It&apos;s the first time I used MongoDB and I gotta say it&apos;s nice
+					to just throw shit in a bucket and have it just work.
+				</Text>
+
+				<Text mt={'sm'}>
+					I also wanted to challenge myself by not going the usual route with
+					having an ASP.NET backend, because this is such a simple application
+					it doesn&apos;t need an ASP.NET backend. And I&apos;m glad I did,
+					because it&apos;s nice having everything in Next.js
+				</Text>
+
+				<Text mt={'sm'}>
 					You can find the source code for this website on my{' '}
-					<a href="https://github.com/antoninvf/fence.flwn.dev">GitHub</a>.
+					<a href="https://github.com/antoninvf/fence.flwn.dev" target="_blank">
+						GitHub
+					</a>{' '}
+					(i did kind of rush this, so there&apos;s a lot of bad code)
 				</Text>
 
 				<Text mt={'sm'}>
@@ -37,7 +66,7 @@ export default function About() {
 					<a href="/images/onthefence.png" target="_blank">
 						here
 					</a>{' '}
-					is the actual original image that this website is based on.
+					is the actual original image that this website is based on 😭
 				</Text>
 
 				<Text mt={'sm'}>
@@ -52,7 +81,7 @@ export default function About() {
 					</Tooltip>
 				</Text>
 
-				<Center mt={'3rem'} mb={'5rem'}>
+				<Center mt={'xl'} mb={'xl'}>
 					<Button
 						leftSection={<IconStar />}
 						size="xl"
