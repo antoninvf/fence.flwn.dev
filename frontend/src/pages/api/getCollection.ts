@@ -5,7 +5,7 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const client = new MongoClient(`mongodb://10.1.0.21:9993/fence`);
+	const client = new MongoClient(`mongodb://localhost:27017/fence`);
 
 	await client.connect();
 
