@@ -5,7 +5,9 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const client = new MongoClient(process.env.MONGODB_URI || '');
+	const client = new MongoClient(
+		`mongodb://root:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@mongo:27017/fence`,
+	);
 
 	await client.connect();
 
