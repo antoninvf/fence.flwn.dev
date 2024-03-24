@@ -7,6 +7,7 @@ import {
 	Container,
 	Card,
 	Badge,
+	Tooltip,
 } from '@mantine/core';
 import { IconSkull } from '@tabler/icons-react';
 import moment from 'moment';
@@ -46,9 +47,14 @@ export function FenceDisplay({ posts }: any) {
 									top={'0.75rem'}
 									right={'0.75rem'}
 								>
-									<Badge color="pink">
-										{moment(parseInt(post.timestamp)).fromNow()}
-									</Badge>
+									<Tooltip
+										label={moment(parseInt(post.timestamp)).toLocaleString()}
+										withArrow
+									>
+										<Badge color="pink">
+											{moment(parseInt(post.timestamp)).fromNow()}
+										</Badge>
+									</Tooltip>
 								</Flex>
 								<Flex justify="space-between" align={'start'} gap={'6rem'}>
 									<Text fw={600} size="xl">
