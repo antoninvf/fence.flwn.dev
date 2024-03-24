@@ -5,7 +5,7 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const client = new MongoClient(`mongodb://10.1.0.21:9993/fence`);
+	const client = new MongoClient((process.env.MONGODB_URI as string) || '');
 
 	await client.connect();
 
@@ -13,6 +13,7 @@ export default async function handler(
 	const posts = await db
 		.collection(req.query.collection as string)
 		.find()
+		.sort({ timestamp: -1 })
 		.toArray();
 
 	await client.close();
