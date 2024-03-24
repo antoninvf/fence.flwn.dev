@@ -5,8 +5,7 @@ export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse,
 ) {
-	const pass = process.env.NEXT_PUBLIC_DATABASE_PASSWORD;
-	const client = new MongoClient(`mongodb://root:${pass}@10.1.0.21:9993/fence`);
+	const client = new MongoClient(`mongodb://10.1.0.21:9993/fence`);
 
 	await client.connect();
 
@@ -16,7 +15,7 @@ export default async function handler(
 		.find()
 		.toArray();
 
-	client.close();
+	await client.close();
 
 	res.status(200).json(JSON.parse(JSON.stringify(posts)));
 }
