@@ -9,7 +9,7 @@ export default async function handler(
 		`mongodb://root:${process.env.NEXT_PUBLIC_DATABASE_PASSWORD}@mongo:27017/fence`,
 	);
 
-	console.log(process.env.NEXT_PUBLIC_DATABASE_PASSWORD);
+	console.log('FUCK YOU???: ' + process.env.NEXT_PUBLIC_DATABASE_PASSWORD);
 
 	await client.connect();
 
