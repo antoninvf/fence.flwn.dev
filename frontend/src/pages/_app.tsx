@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 import Head from 'next/head';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '../../theme';
@@ -11,7 +12,7 @@ export default function App({ Component, pageProps }: any) {
 			<QueryClientProvider>
 				<ColorSchemeScript defaultColorScheme="auto" />
 				<MantineProvider theme={theme} defaultColorScheme="auto">
-					<Notifications />
+					<Notifications autoClose={4000} />
 					<Head>
 						<title>flwn.dev | It&apos;s on the fence</title>
 						<meta
