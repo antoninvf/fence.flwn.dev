@@ -7,7 +7,7 @@ services:
     ports:
       - "9991:3000"
     environment:
-      MONGODB_URI: mongodb://root:${DB_PASSWORD}@localhost:27017/fence
+      MONGODB_URI: mongodb://root:${DB_PASSWORD}@mongo:27017/fence
     depends_on:
       - mongo
   mongo:
