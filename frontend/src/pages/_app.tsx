@@ -10,8 +10,8 @@ export default function App({ Component, pageProps }: any) {
 	return (
 		<>
 			<QueryClientProvider>
-				<ColorSchemeScript defaultColorScheme="auto" />
-				<MantineProvider theme={theme} defaultColorScheme="auto">
+				<ColorSchemeScript defaultColorScheme="dark" />
+				<MantineProvider theme={theme} defaultColorScheme="dark">
 					<Notifications autoClose={4000} />
 					<Head>
 						<title>flwn.dev | It&apos;s on the fence</title>
